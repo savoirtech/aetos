@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.savoirtech</groupId>
+    <artifactId>esb-parent</artifactId>
+    <version>1.0.1</version>
+  </parent>
+
+  <groupId>com.savoirtech</groupId>
+  <artifactId>aetos</artifactId>
+  <name>SavoirESB :: Aetos</name>
+  <packaging>pom</packaging>
+
+  <dependencies>
+
+    <!-- Apache Karaf -->
+    <dependency>
+      <groupId>org.apache.karaf</groupId>
+      <artifactId>apache-karaf</artifactId>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.karaf</groupId>
+      <artifactId>apache-karaf</artifactId>
+      <type>tar.gz</type>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.karaf.assemblies.features</groupId>
+      <artifactId>standard</artifactId>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.karaf.assemblies.features</groupId>
+      <artifactId>enterprise</artifactId>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+
+    <!-- Apache Camel -->
+    <dependency>
+      <groupId>org.apache.camel.karaf</groupId>
+      <artifactId>apache-camel</artifactId>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+
+    <!-- Apache CXF -->
+    <dependency>
+      <groupId>org.apache.cxf.karaf</groupId>
+      <artifactId>apache-cxf</artifactId>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+
+    <!-- Apache ActiveMQ -->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-karaf</artifactId>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+
+  </dependencies>
+  <build>
+    <resources>
+      <resource>
+        <directory>${project.basedir}/src/main/filtered-resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>filter</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.karaf.tooling</groupId>
+        <artifactId>features-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-features-to-repo</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>add-features-to-repo</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>mvn:org.apache.karaf.assemblies.features/standard/${karaf.version}/xml/features</descriptor>
+                <descriptor>mvn:org.apache.karaf.assemblies.features/enterprise/${karaf.version}/xml/features</descriptor>
+                <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</descriptor>
+                <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</descriptor>
+                <descriptor>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</descriptor>
+                <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
+              </descriptors>
+              <features>
+                <!-- Core Features -->
+                <feature>spring</feature>
+                <feature>spring-dm</feature>
+                <feature>jetty</feature>
+                <!-- ActiveMQ Features -->
+                <feature>activemq</feature>
+                <feature>activemq-blueprint</feature>
+                <feature>activemq-spring</feature>
+
+                <!-- Camel Features -->
+
+                <feature>camel</feature>
+                <feature>camel-core</feature>
+                <feature>camel-spring</feature>
+                <feature>camel-blueprint</feature>
+
+                <!--
+                <feature>camel-activemq</feature>
+                -->
+
+                <feature>camel-test</feature>
+                <feature>camel-cxf</feature>
+                <feature>camel-cache</feature>
+                <feature>camel-castor</feature>
+                <feature>camel-crypto</feature>
+                <feature>camel-http</feature>
+                <feature>camel-http4</feature>
+                <feature>camel-mina</feature>
+                <feature>camel-jetty</feature>
+                <feature>camel-servlet</feature>
+                <feature>camel-jms</feature>
+                <feature>camel-jmx</feature>
+                <feature>camel-amqp</feature>
+                <feature>camel-atom</feature>
+                <feature>camel-aws</feature>
+                <feature>camel-bam</feature>
+                <feature>camel-bean-validator</feature>
+                <feature>camel-bindy</feature>
+                <feature>camel-cometd</feature>
+                <feature>camel-csv</feature>
+                <feature>camel-dozer</feature>
+                <!-- Disable this feature as there is a mistake in, see CAMEL-3637 -->
+                <!-- <feature>camel-eventAdmin</feature> -->
+                <feature>camel-exec</feature>
+                <feature>camel-flatpack</feature>
+                <feature>camel-freemarker</feature>
+                <feature>camel-ftp</feature>
+                <feature>camel-guice</feature>
+                <feature>camel-groovy</feature>
+                <feature>camel-hl7</feature>
+                <feature>camel-hawtdb</feature>
+                <feature>camel-ibatis</feature>
+                <feature>camel-irc</feature>
+                <feature>camel-jackson</feature>
+                <feature>camel-jasypt</feature>
+                <feature>camel-jaxb</feature>
+                <feature>camel-jcr</feature>
+                <feature>camel-jing</feature>
+                <feature>camel-jibx</feature>
+                <feature>camel-jdbc</feature>
+                <feature>camel-josql</feature>
+                <feature>camel-jpa</feature>
+                <feature>camel-jxpath</feature>
+                <feature>camel-juel</feature>
+                <feature>camel-kestrel</feature>
+                <feature>camel-ldap</feature>
+                <feature>camel-lucene</feature>
+                <feature>camel-mail</feature>
+                <feature>camel-msv</feature>
+                <feature>camel-mvel</feature>
+                <feature>camel-nagios</feature>
+                <feature>camel-netty</feature>
+                <feature>camel-ognl</feature>
+                <feature>camel-paxlogging</feature>
+                <feature>camel-printer</feature>
+                <feature>camel-protobuf</feature>
+                <feature>camel-quartz</feature>
+                <feature>camel-quickfix</feature>
+                <feature>camel-rmi</feature>
+                <feature>camel-routebox</feature>
+                <feature>camel-rss</feature>
+                <feature>camel-saxon</feature>
+                <feature>camel-scala</feature>
+                <feature>camel-script</feature>
+                <feature>camel-sip</feature>
+                <feature>camel-shiro</feature>
+                <feature>camel-smpp</feature>
+                <feature>camel-snmp</feature>
+                <feature>camel-soap</feature>
+                <feature>camel-spring-javaconfig</feature>
+                <feature>camel-spring-security</feature>
+                <feature>camel-spring-ws</feature>
+                <feature>camel-sql</feature>
+                <feature>camel-stream</feature>
+                <feature>camel-string-template</feature>
+                <feature>camel-syslog</feature>
+                <feature>camel-tagsoup</feature>
+                <feature>camel-velocity</feature>
+                <feature>camel-xmlbeans</feature>
+                <feature>camel-xmlsecurity</feature>
+                <feature>camel-xmpp</feature>
+                <feature>camel-xstream</feature>
+                <!-- Savoir features -->
+
+                <feature>savoir-core</feature>
+                <feature>savoir-test</feature>
+                <feature>savoir-messaging</feature>
+                <feature>savoir-ws</feature>
+                <feature>savoir-logging</feature>
+                <feature>savoir-monitoring</feature>
+                <feature>savoir-encryption</feature>
+                <feature>savoir-ldap</feature>
+                <feature>savoir-scheduler</feature>
+                <feature>savoir-system</feature>
+              </features>
+              <repository>target/features-repo</repository>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.savoirtech</groupId>
+                  <artifactId>com.savoirtech.branding</artifactId>
+                  <version>${project.version}</version>
+                  <outputDirectory>target/dependencies</outputDirectory>
+                  <destFileName>savoir.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-unix</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.apache.karaf</groupId>
+                  <artifactId>apache-karaf</artifactId>
+                  <type>tar.gz</type>
+                  <outputDirectory>target/dependencies/unix</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-win</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.apache.karaf</groupId>
+                  <artifactId>apache-karaf</artifactId>
+                  <type>zip</type>
+                  <outputDirectory>target/dependencies/win</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-camel</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.apache.camel</groupId>
+                  <artifactId>apache-camel</artifactId>
+                  <version>${camel.version}</version>
+                  <type>tar.gz</type>
+                  <outputDirectory>target/dependencies/camel</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2</version>
+        <executions>
+          <execution>
+            <id>unix-bin</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>src/main/descriptors/unix-bin.xml</descriptor>
+              </descriptors>
+              <appendAssemblyId>false</appendAssemblyId>
+              <tarLongFileMode>gnu</tarLongFileMode>
+            </configuration>
+          </execution>
+          <execution>
+            <id>win-bin</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>src/main/descriptors/win-bin.xml</descriptor>
+              </descriptors>
+              <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>apache.snapshots</id>
+      <url>http://repository.apache.org/snapshots/</url>
+      <name>Apache Snapshot Repo</name>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+
+    <repository>
+      <id>fuse-repository</id>
+      <url>http://repo.fusesource.com/nexus/content/repositories/releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+
+    <!-- for javax mail -->
+    <repository>
+      <id>java.net.m2</id>
+      <name>Java.net Repository for Maven</name>
+      <url>http://download.java.net/maven/2/</url>
+      <layout>default</layout>
+    </repository>
+
+  </repositories>
+
+  <pluginRepositories>
+
+    <pluginRepository>
+      <id>apache.snapshots</id>
+      <url>http://repository.apache.org/snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </pluginRepository>
+
+    <pluginRepository>
+      <id>fuse-plugins</id>
+      <url>http://repo.fusesource.com/nexus/content/repositories/releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
+
+  </project>
+

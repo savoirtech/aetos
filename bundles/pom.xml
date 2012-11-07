@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>esb-parent</artifactId>
+    <groupId>com.savoirtech</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>bundles</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>cassandra-all</module>
+  </modules>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- maven surefire version added here so it could be overridden -->
+    <maven.surefire.plugin.version>2.5</maven.surefire.plugin.version>
+    <maven.surefire.report.plugin.version>2.5</maven.surefire.report.plugin.version>
+    <maven.eclipse.plugin.version>2.5.1</maven.eclipse.plugin.version>
+    <maven.pax.plugin.version>1.4</maven.pax.plugin.version>
+    <!-- turn down the default DEBUG logLevel. Override on the command line if you want -->
+    <dist.name>savoirtech-${project.version}</dist.name>
+    <!-- dependency versions -->
+    <activemq.version>5.7.0</activemq.version>
+    <hazelcast.version>2.0.2</hazelcast.version>
+    <log4jVersion>1.2.16</log4jVersion>
+    <slf4j-version>1.6.4</slf4j-version>
+    <jdk.version>1.6</jdk.version>
+    <compiler.fork>1.6</compiler.fork>
+    <!-- eclipse plugin need the jaxb in this pom.xml file -->
+    <jaxb-version>2.1.13</jaxb-version>
+    <jaxb-api-version>2.1</jaxb-api-version>
+    <maven-bundle-version>2.3.4</maven-bundle-version>
+    <!-- OSGi dependencies -->
+    <felix-version>2.0.1</felix-version>
+    <!-- OSGi bundles properties -->
+    <savoirtech.osgi.import.savoirtech.version>
+      version="[$(version;==;${savoirtech.osgi.version.clean}),$(version;=+;${savoirtech.osgi.version.clean}))"
+    </savoirtech.osgi.import.savoirtech.version>
+    <savoirtech.osgi.import.strict.version>
+      version="[$(version;===;${savoirtech.osgi.version.clean}),$(version;==+;${savoirtech.osgi.version.clean}))"
+    </savoirtech.osgi.import.strict.version>
+    <savoirtech.osgi.import.default.version>[$(version;==;$(@)),$(version;+;$(@)))
+    </savoirtech.osgi.import.default.version>
+    <savoirtech.osgi.import.defaults>
+      org.springframework.*;version="[2.5,4)",
+      javax.persistence.*;version="[1.1,2)"
+    </savoirtech.osgi.import.defaults>
+    <savoirtech.osgi.import.before.defaults/>
+    <savoirtech.osgi.import.additional/>
+    <savoirtech.osgi.import.pkg>
+      !${savoirtech.osgi.export.pkg},
+      com.savoirtech.*;${savoirtech.osgi.import.savoirtech.version},
+      ${savoirtech.osgi.import.before.defaults},
+      ${savoirtech.osgi.import.defaults},
+      ${savoirtech.osgi.import.additional},
+      *,
+    </savoirtech.osgi.import.pkg>
+    <savoirtech.osgi.activator/>
+    <savoirtech.osgi.failok>false</savoirtech.osgi.failok>
+    <savoirtech.osgi.private.pkg>!*</savoirtech.osgi.private.pkg>
+    <savoirtech.osgi.export>${savoirtech.osgi.export.pkg};${savoirtech.osgi.version}</savoirtech.osgi.export>
+    <savoirtech.osgi.version>version=${project.version}</savoirtech.osgi.version>
+    <savoirtech.osgi.split.pkg>-split-package:=first</savoirtech.osgi.split.pkg>
+    <savoirtech.osgi.import>${savoirtech.osgi.import.pkg}</savoirtech.osgi.import>
+    <savoirtech.osgi.dynamic/>
+    <savoirtech.osgi.symbolic.name>${project.groupId}.${project.artifactId}</savoirtech.osgi.symbolic.name>
+    <savoirtech.osgi.exclude.dependencies>false</savoirtech.osgi.exclude.dependencies>
+    <savoirtech.osgi.export.pkg>
+      com.savoirtech.*
+    </savoirtech.osgi.export.pkg>
+    <savoirtech.osgi.import>
+      !com.savoirtech.*,
+      org.apache.xalan.xsltc.trax;resolution:=optional,
+      javax.activation;resolution:=optional,
+      javax.xml.bind;resolution:=optional,
+      javax.xml.bind.annotation;resolution:=optional,
+      javax.xml.bind.annotation.adapters;resolution:=optional,
+      javax.xml.stream;resolution:=optional,
+      org.springframework.jmx.export.annotation;resolution:=optional;version="[2.5,4)",
+      org.springframework.jmx.export.assembler;resolution:=optional;version="[2.5,4)",
+      org.springframework.jmx.export.metadata;resolution:=optional;version="[2.5,4)",
+      *
+    </savoirtech.osgi.import>
+    <savoirtech.osgi.dynamic>
+      <!--
+      org.apache.camel.spring.util;${savoirtech.osgi.import.strict.version},org.apache.camel.processor.interceptor.jpa;${savoirtech.osgi.import.strict.version}
+      -->
+    </savoirtech.osgi.dynamic>
+    <!--
+    <savoirtech.osgi.activator>
+
+    </savoirtech.osgi.activator>
+    -->
+  </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>1.6</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.2-beta-4</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-eclipse-plugin</artifactId>
+          <version>${maven.eclipse.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.ops4j</groupId>
+          <artifactId>maven-pax-plugin</artifactId>
+          <version>${maven.pax.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven.surefire.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <configuration>
+            <archiveClasses>true</archiveClasses>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>2.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.1.1</version>
+          <configuration>
+            <archive>
+              <manifestEntries>
+                <Bundle-SymbolicName>${project.groupId}.${project.artifactId}.source
+                </Bundle-SymbolicName>
+                <Bundle-Version>${savoirtech.osgi.version.clean}</Bundle-Version>
+                <Eclipse-SourceBundle>
+                  ${project.groupId}.${project.artifactId};version="${savoirtech.osgi.version.clean}"
+                </Eclipse-SourceBundle>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>properties-maven-plugin</artifactId>
+          <version>1.0-alpha-2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <!-- Base osgi bundle plugin configuration for savoirtech -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <inherited>true</inherited>
+        <executions>
+          <execution>
+            <id>create-prop</id>
+            <phase>initialize</phase>
+            <configuration>
+              <tasks>
+                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath"/>
+                <property name="ant.regexp.regexpimpl" value="org.apache.tools.ant.util.regexp.Jdk14RegexpRegexp"/>
+                <property name="mv" value="${project.version}"/>
+                <echo message="Maven version: ${mv}"/>
+                <propertyregex property="ov.p1" input="${mv}" regexp="(\d+)(?:\.(\d+)(?:\.(\d+))?)?(?:[^a-zA-Z0-9](.*))?" replace="\1"
+                               defaultValue="0"/>
+                <propertyregex property="ov.p2" input="${mv}" regexp="(\d+)(?:\.(\d+)(?:\.(\d+))?)?(?:[^a-zA-Z0-9](.*))?"
+                               replace=".\2" defaultValue=".0"/>
+                <propertyregex property="ov.p3" input="${mv}" regexp="(\d+)(?:\.(\d+)(?:\.(\d+))?)?(?:[^a-zA-Z0-9](.*))?"
+                               replace=".\3" defaultValue=".0"/>
+                <propertyregex property="ov.p4" input="${mv}" regexp="(\d+)(?:\.(\d+)(?:\.(\d+))?)?(?:[^a-zA-Z0-9](.*))?"
+                               replace=".\4" defaultValue=""/>
+                <propertyregex property="ov.p1a" input="${ov.p1}" regexp="(.+)" replace="\1" defaultValue="0"/>
+                <propertyregex property="ov.p2a" input="${ov.p2}" regexp="(\..+)" replace="\1" defaultValue=".0"/>
+                <propertyregex property="ov.p3a" input="${ov.p3}" regexp="(\..+)" replace="\1" defaultValue=".0"/>
+                <propertyregex property="ov.p4a" input="${ov.p4}" regexp="(\..+)" replace="\1" defaultValue=""/>
+                <property name="ov" value="${ov.p1a}${ov.p2a}${ov.p3a}${ov.p4a}"/>
+                <property name="os" value="${ov.p1a}${ov.p2a}"/>
+                <echo message="OSGi version: ${ov}"/>
+                <mkdir dir="target"/>
+                <echo file="target/savoirtech.osgi.version.txt">
+                  savoirtech.osgi.version.clean = ${ov}
+                  savoirtech.schema.version = ${os}
+                </echo>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb-api-version}</version>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${jaxb-version}</version>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-xjc</artifactId>
+            <version>${jaxb-version}</version>
+          </dependency>
+          <dependency>
+            <groupId>ant-contrib</groupId>
+            <artifactId>ant-contrib</artifactId>
+            <version>1.0b3</version>
+          </dependency>
+          <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant-optional</artifactId>
+            <version>1.5.3-1</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+        <inherited>true</inherited>
+        <executions>
+          <execution>
+            <phase>initialize</phase>
+            <goals>
+              <goal>read-project-properties</goal>
+            </goals>
+            <configuration>
+              <files>
+                <file>target/savoirtech.osgi.version.txt</file>
+              </files>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <version>${maven-bundle-version}</version>
+        <inherited>true</inherited>
+        <configuration>
+          <excludeDependencies>${savoirtech.osgi.exclude.dependencies}</excludeDependencies>
+          <instructions>
+            <Bundle-Name>${project.artifactId}</Bundle-Name>
+            <Bundle-SymbolicName>${savoirtech.osgi.symbolic.name}</Bundle-SymbolicName>
+            <Bundle-Activator>${savoirtech.osgi.activator}</Bundle-Activator>
+            <Export-Package>${savoirtech.osgi.export}</Export-Package>
+            <Import-Package>${savoirtech.osgi.import}</Import-Package>
+            <DynamicImport-Package>${savoirtech.osgi.dynamic}</DynamicImport-Package>
+            <Private-Package>${savoirtech.osgi.private.pkg}</Private-Package>
+            <Implementation-Title>savoirtech POC</Implementation-Title>
+            <Implementation-Version>${project.version}</Implementation-Version>
+            <_versionpolicy>${savoirtech.osgi.import.default.version}</_versionpolicy>
+            <_failok>${savoirtech.osgi.failok}</_failok>
+          </instructions>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <escapeString>\</escapeString>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <inherited>false</inherited>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <descriptor>src/assembly/dist.xml</descriptor>
+          </descriptors>
+          <appendAssemblyId>false</appendAssemblyId>
+          <tarLongFileMode>gnu</tarLongFileMode>
+          <outputDirectory>${dist.dir}</outputDirectory>
+          <finalName>${dist.name}</finalName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
