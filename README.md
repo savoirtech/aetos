@@ -1,4 +1,4 @@
-aetos
+Aetos
 =====
 
 Aetos Integration Platform
