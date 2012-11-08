@@ -9,6 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>bundles</artifactId>
+  <name>SavoirESB :: Bundles</name>
   <packaging>pom</packaging>
   <modules>
     <module>cassandra-all</module>
