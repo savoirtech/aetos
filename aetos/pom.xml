@@ -12,7 +12,7 @@
 
   <groupId>com.savoirtech</groupId>
   <artifactId>aetos</artifactId>
-  <name>SavoirESB :: Aetos</name>
+  <name>Aetos Integration Platform :: Aetos</name>
   <packaging>pom</packaging>
 
   <dependencies>

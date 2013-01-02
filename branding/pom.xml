@@ -12,7 +12,7 @@
 
     <artifactId>com.savoirtech.branding</artifactId>
     <packaging>bundle</packaging>
-    <name>SavoirESB :: Branding</name>
+    <name>Aetos Integration Platform :: Branding</name>
 
     <build>
         <resources>
