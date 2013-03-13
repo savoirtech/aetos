@@ -5,7 +5,7 @@
   <groupId>com.savoirtech</groupId>
   <artifactId>esb-parent</artifactId>
   <version>1.2.0</version>
-  <name>Savoir :: ESB - Parent</name>
+  <name>Savoir :: Aetos Integration Platform - Parent</name>
   <packaging>pom</packaging>
   <prerequisites>
     <maven>2.2.1</maven>
