@@ -7,12 +7,12 @@
   <parent>
     <groupId>com.savoirtech</groupId>
     <artifactId>esb-parent</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2.0</version>
   </parent>
 
   <groupId>com.savoirtech</groupId>
   <artifactId>aetos</artifactId>
-  <name>Aetos Integration Platform :: Aetos</name>
+  <name>SavoirESB :: Aetos</name>
   <packaging>pom</packaging>
 
   <dependencies>
@@ -116,8 +116,7 @@
                 <feature>jetty</feature>
                 <!-- ActiveMQ Features -->
                 <feature>activemq</feature>
-                <feature>activemq-blueprint</feature>
-                <feature>activemq-spring</feature>
+
 
                 <!-- Camel Features -->
 

@@ -12,7 +12,7 @@
   </feature>
 
   <feature name="activemq-broker" version="${project.version}" resolver="(obr)" start-level='50'>
-    <feature version="${activemq.version}">activemq-blueprint</feature>
+    <feature version="${activemq.version}">activemq-broker</feature>
     <bundle>blueprint:file:etc/activemq-broker.xml</bundle>
   </feature>
 
@@ -30,8 +30,6 @@
   <feature name="savoir-messaging" version="${project.version}" resolver='(obr)'>
     <feature version='${project.version}'>savoir-core</feature>
     <feature version="${activemq.version}">activemq</feature>
-    <feature version="${activemq.version}">activemq-spring</feature>
-    <feature version="${activemq.version}">activemq-blueprint</feature>
     <feature version="${project.version}">camel-activemq</feature>
   </feature>
   <feature name="savoir-ws" version="${project.version}" resolver='(obr)'>
