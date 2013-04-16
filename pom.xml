@@ -11,11 +11,11 @@
     <maven>2.2.1</maven>
   </prerequisites>
   <properties>
-    <activemq.version>5.8.0</activemq.version>
-    <camel.version>2.10.4</camel.version>
-    <camel.activemq.version>5.8.0</camel.activemq.version>
-    <cxf.version>2.6.6</cxf.version>
-    <karaf.version>2.3.1</karaf.version>
+    <activemq.version>5.7.0</activemq.version>
+    <camel.version>2.10.2</camel.version>
+    <camel.activemq.version>5.7.0</camel.activemq.version>
+    <cxf.version>2.6.3</cxf.version>
+    <karaf.version>2.2.9</karaf.version>
     <ehcache-version>2.3.0_3</ehcache-version>
     <cassandra.version>1.1.6</cassandra.version>
   </properties>
