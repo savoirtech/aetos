@@ -12,12 +12,12 @@
   </prerequisites>
   <properties>
     <activemq.version>5.7.0</activemq.version>
-    <camel.version>2.10.5</camel.version>
+    <camel.version>2.11.0</camel.version>
     <camel.activemq.version>5.7.0</camel.activemq.version>
-    <cxf.version>2.6.3</cxf.version>
+    <cxf.version>2.7.4</cxf.version>
     <karaf.version>2.3.2</karaf.version>
     <ehcache-version>2.3.0_3</ehcache-version>
-    <cassandra.version>1.1.9</cassandra.version>
+    <cassandra.version>1.2.6</cassandra.version>
   </properties>
   <repositories>
     <repository>

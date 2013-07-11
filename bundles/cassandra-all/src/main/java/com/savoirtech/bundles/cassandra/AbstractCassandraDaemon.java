@@ -33,7 +33,6 @@ import com.google.common.collect.Iterables;
 import org.apache.cassandra.concurrent.DebuggableThreadPoolExecutor;
 import org.apache.cassandra.concurrent.NamedThreadFactory;
 import org.apache.cassandra.config.CFMetaData;
-import org.apache.cassandra.config.ConfigurationException;
 import org.apache.cassandra.config.DatabaseDescriptor;
 import org.apache.cassandra.config.Schema;
 import org.apache.cassandra.db.ColumnFamilyStore;
@@ -41,11 +40,12 @@ import org.apache.cassandra.db.Directories;
 import org.apache.cassandra.db.SystemTable;
 import org.apache.cassandra.db.Table;
 import org.apache.cassandra.db.commitlog.CommitLog;
+import org.apache.cassandra.exceptions.ConfigurationException;
 import org.apache.cassandra.service.CacheService;
 import org.apache.cassandra.service.CassandraDaemon;
-import org.apache.cassandra.service.ClientState;
 import org.apache.cassandra.service.GCInspector;
 import org.apache.cassandra.service.StorageService;
+import org.apache.cassandra.thrift.ThriftClientState;
 import org.apache.cassandra.utils.CLibrary;
 import org.apache.cassandra.utils.Mx4jTool;
 import org.apache.log4j.PropertyConfigurator;
@@ -58,7 +58,13 @@ import org.slf4j.LoggerFactory;
  * hooks into its lifecycle methods (see {@link #setup()}, {@link #start()},
  * {@link #stop()} and {@link #setup()}).
  */
-public abstract class AbstractCassandraDaemon implements CassandraDaemon {
+public abstract class AbstractCassandraDaemon extends CassandraDaemon {
+
+    private static Logger logger = LoggerFactory.getLogger(AbstractCassandraDaemon.class);
+    protected InetAddress listenAddr;
+    protected int listenPort;
+    protected volatile boolean isRunning = false;
+    static final AtomicInteger exceptions = new AtomicInteger();
 
     /**
      * Initialize logging in such a way that it checks for config changes every 10 seconds.
@@ -98,14 +104,6 @@ public abstract class AbstractCassandraDaemon implements CassandraDaemon {
         }
     }
 
-    private static Logger logger = LoggerFactory.getLogger(AbstractCassandraDaemon.class);
-
-    static final AtomicInteger exceptions = new AtomicInteger();
-
-    protected InetAddress listenAddr;
-    protected int listenPort;
-    protected volatile boolean isRunning = false;
-
     /**
      * This is a hook for concrete daemons to initialize themselves suitably.
      * <p/>
@@ -113,7 +111,7 @@ public abstract class AbstractCassandraDaemon implements CassandraDaemon {
      *
      * @throws java.io.IOException
      */
-    protected void setup() throws IOException {
+    protected void setup() {
         logger.info("JVM vendor/version: {}/{}", System.getProperty("java.vm.name"), System.getProperty("java.version"));
         logger.info("Heap size: {}/{}", Runtime.getRuntime().totalMemory(), Runtime.getRuntime().maxMemory());
         logger.info("Classpath: {}", System.getProperty("java.class.path"));
@@ -126,7 +124,7 @@ public abstract class AbstractCassandraDaemon implements CassandraDaemon {
             public void uncaughtException(Thread t, Throwable e) {
                 exceptions.incrementAndGet();
                 logger.error("Exception in thread " + t, e);
-                for (Throwable e2 = e; e2 != null; e2 = e2.getCause()) {
+                for (Throwable e2 = e;e2 != null;e2 = e2.getCause()) {
                     // some code, like FileChannel.map, will wrap an OutOfMemoryError in another exception
                     if (e2 instanceof OutOfMemoryError) {
                         System.exit(100);
@@ -160,8 +158,8 @@ public abstract class AbstractCassandraDaemon implements CassandraDaemon {
         // check the system table to keep user from shooting self in foot by changing partitioner, cluster name, etc.
         // we do a one-off scrub of the system table first; we can't load the list of the rest of the tables,
         // until system table is opened.
-        for (CFMetaData cfm : Schema.instance.getTableMetaData(Table.SYSTEM_TABLE).values()) {
-            ColumnFamilyStore.scrubDataDirectories(Table.SYSTEM_TABLE, cfm.cfName);
+        for (CFMetaData cfm : Schema.instance.getTableMetaData(Table.SYSTEM_KS).values()) {
+            ColumnFamilyStore.scrubDataDirectories(Table.SYSTEM_KS, cfm.cfName);
         }
         try {
             SystemTable.checkHealth();
@@ -208,7 +206,13 @@ public abstract class AbstractCassandraDaemon implements CassandraDaemon {
         }
 
         // replay the log if necessary
-        CommitLog.instance.recover();
+        try {
+            CommitLog.instance.recover();
+        } catch (IOException e) {
+            logger.error("Fatal configuration error", e);
+            System.err.println(e.getMessage() + "\nFatal configuration error; unable to start server.  See log for stacktrace.");
+            System.exit(1);
+        }
 
         SystemTable.finishStartup();
 
@@ -360,9 +364,9 @@ public abstract class AbstractCassandraDaemon implements CassandraDaemon {
      */
     public static class CleaningThreadPool extends ThreadPoolExecutor {
 
-        private ThreadLocal<ClientState> state;
+        private ThriftClientState state;
 
-        public CleaningThreadPool(ThreadLocal<ClientState> state, int minWorkerThread, int maxWorkerThreads) {
+        public CleaningThreadPool(ThriftClientState state, int minWorkerThread, int maxWorkerThreads) {
             super(minWorkerThread, maxWorkerThreads, 60, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), new NamedThreadFactory("Thrift"));
             this.state = state;
         }
@@ -371,7 +375,7 @@ public abstract class AbstractCassandraDaemon implements CassandraDaemon {
         protected void afterExecute(Runnable r, Throwable t) {
             super.afterExecute(r, t);
             DebuggableThreadPoolExecutor.logExceptionsAfterExecute(r, t);
-            state.get().logout();
+            //state.get()
         }
     }
 }

@@ -119,7 +119,7 @@ public class CassandraDaemon extends AbstractCassandraDaemon {
             logger.info(String.format("Binding thrift service to %s:%s", listenAddr, listenPort));
 
             // Protocol factory
-            TProtocolFactory tProtocolFactory = new TBinaryProtocol.Factory(true, true, DatabaseDescriptor.getThriftMaxMessageLength());
+            TProtocolFactory tProtocolFactory = new TBinaryProtocol.Factory(true, true);
 
             // Transport factory
             int tFramedTransportSize = DatabaseDescriptor.getThriftFramedTransportSize();
@@ -140,7 +140,7 @@ public class CassandraDaemon extends AbstractCassandraDaemon {
                     DatabaseDescriptor.getRpcMinThreads()).maxWorkerThreads(DatabaseDescriptor.getRpcMaxThreads()).inputTransportFactory(
                     inTransportFactory).outputTransportFactory(outTransportFactory).inputProtocolFactory(tProtocolFactory).outputProtocolFactory(
                     tProtocolFactory).processor(processor);
-                ExecutorService executorService = new CleaningThreadPool(cassandraServer.clientState, serverArgs.minWorkerThreads,
+                ExecutorService executorService = new CleaningThreadPool(cassandraServer.state(), serverArgs.minWorkerThreads,
                     serverArgs.maxWorkerThreads);
                 serverEngine = new CustomTThreadPoolServer(serverArgs, executorService);
                 logger.info(String.format("Using synchronous/threadpool thrift server on %s : %s", listenAddr, listenPort));
