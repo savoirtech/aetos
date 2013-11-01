@@ -117,6 +117,16 @@
                                 <!-- ActiveMQ Features -->
                                 <feature>activemq</feature>
 
+                                <feature>config</feature>
+                                <feature>ssh</feature>
+                                <feature>management</feature>
+                                <feature>obr</feature>
+                                <feature>war</feature>
+                                <feature>kar</feature>
+                                <feature>transaction</feature>
+                                <feature>jpa</feature>
+                                <feature>jndi</feature>
+
                                 <!-- Camel Features -->
 
                                 <feature>camel</feature>
