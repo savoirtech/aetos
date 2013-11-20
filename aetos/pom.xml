@@ -4,14 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.savoirtech</groupId>
-        <artifactId>esb-parent</artifactId>
+        <groupId>com.savoirtech.aetos</groupId>
+        <artifactId>aetos-parent</artifactId>
         <version>1.5.5-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.savoirtech</groupId>
     <artifactId>aetos</artifactId>
-    <name>SavoirESB :: Aetos</name>
+    <name>Aetos Integration Platform</name>
     <packaging>pom</packaging>
 
     <dependencies>
