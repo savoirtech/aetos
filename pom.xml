@@ -251,4 +251,8 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <!--
+    Testing IRC Notifications
+    -->
 </project>
