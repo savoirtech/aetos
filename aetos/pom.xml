@@ -90,13 +90,13 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
-                <artifactId>karaf-maven-plugin</artifactId>
+                <artifactId>features-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>features-add-to-repository</id>
+                        <id>add-features-to-repo</id>
                         <phase>generate-resources</phase>
                         <goals>
-                            <goal>features-add-to-repository</goal>
+                            <goal>add-features-to-repo</goal>
                         </goals>
                         <configuration>
                             <descriptors>

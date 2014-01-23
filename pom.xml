@@ -23,7 +23,7 @@
         <camel.version>2.12.1</camel.version>
         <camel.activemq.version>5.9.0</camel.activemq.version>
         <cxf.version>2.7.6</cxf.version>
-        <karaf.version>3.0.0</karaf.version>
+        <karaf.version>2.4.0-SNAPSHOT</karaf.version>
         <ehcache-version>2.3.0_3</ehcache-version>
         <cassandra.version>1.2.6</cassandra.version>
     </properties>
