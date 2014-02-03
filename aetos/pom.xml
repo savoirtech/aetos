@@ -249,7 +249,7 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>com.savoirtech</groupId>
+                                    <groupId>com.savoirtech.aetos</groupId>
                                     <artifactId>com.savoirtech.branding</artifactId>
                                     <version>${project.version}</version>
                                     <outputDirectory>target/dependencies</outputDirectory>
