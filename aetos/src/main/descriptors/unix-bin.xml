@@ -126,7 +126,7 @@
         <file>
             <source>${basedir}/target/classes/features.xml</source>
 
-            <outputDirectory>/system/com/savoirtech/savoir-esb/${project.version}</outputDirectory>
+            <outputDirectory>/system/com/savoirtech/aetos/${project.version}</outputDirectory>
             <destName>savoir-esb-${project.version}-features.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>

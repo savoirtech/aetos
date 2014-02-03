@@ -250,7 +250,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>com.savoirtech.aetos</groupId>
-                                    <artifactId>com.savoirtech.branding</artifactId>
+                                    <artifactId>aetos-branding</artifactId>
                                     <version>${project.version}</version>
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>savoir.jar</destFileName>
