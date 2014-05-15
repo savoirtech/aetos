@@ -23,8 +23,8 @@
     <!-- turn down the default DEBUG logLevel. Override on the command line if you want -->
     <dist.name>savoirtech-${project.version}</dist.name>
     <!-- dependency versions -->
-    <activemq.version>5.7.0</activemq.version>
-    <hazelcast.version>2.0.2</hazelcast.version>
+    <activemq.version>5.9.0</activemq.version>
+    <hazelcast.version>3.2-RC1</hazelcast.version>
     <log4jVersion>1.2.16</log4jVersion>
     <slf4j-version>1.7.2</slf4j-version>
     <jdk.version>1.6</jdk.version>
