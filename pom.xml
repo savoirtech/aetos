@@ -18,13 +18,17 @@
     </prerequisites>
 
     <properties>
-        <activemq.version>5.9.0</activemq.version>
-        <camel.version>2.12.1</camel.version>
-        <camel.activemq.version>5.9.0</camel.activemq.version>
-        <cxf.version>2.7.6</cxf.version>
-        <karaf.version>2.3.3</karaf.version>
+        <activemq.version>5.9.1</activemq.version>
+        <camel.version>2.13.2</camel.version>
+        <camel.activemq.version>5.9.1</camel.activemq.version>
+        <cxf.version>2.7.11</cxf.version>
+        <karaf.version>2.3.6</karaf.version>
         <ehcache-version>2.3.0_3</ehcache-version>
         <cassandra.version>1.2.6</cassandra.version>
+
+        <!-- Manual features override -->
+        <old.jetty.version>7.6.9.v20130131</old.jetty.version>
+        <jetty.version>7.6.15.v20140411</jetty.version>
     </properties>
 
     <scm>
