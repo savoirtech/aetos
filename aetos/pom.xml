@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>com.savoirtech.aetos</groupId>
         <artifactId>aetos-parent</artifactId>
-        <version>1.5.6-SNAPSHOT</version>
+        <version>1.5.6</version>
     </parent>
 
     <artifactId>aetos</artifactId>
@@ -125,10 +124,9 @@
                         <configuration>
                             <target>
 
-                                <replace file="${project.build.directory}/karaf-features-standard/features.xml" token="${old.jetty.version}"
-                                         value="${jetty.version}"/>
+                                <replace file="${project.build.directory}/karaf-features-standard/features.xml" token="${old.jetty.version}" value="${jetty.version}" />
 
-                                <copy file="${project.build.directory}/karaf-features-standard/features.xml" tofile="${project.build.directory}/classes/standard.xml"/>
+                                <copy file="${project.build.directory}/karaf-features-standard/features.xml" tofile="${project.build.directory}/classes/standard.xml" />
                             </target>
                         </configuration>
                         <goals>
