@@ -4,16 +4,19 @@ Aetos
 Aetos Integration Platform
 --------------------------
 
-Aetos can be built from source (mvn clean install), or obtained as binary from Maven Central:
-http://maven-repository.com/artifact/com.savoirtech.aetos/aetos
-http://repo1.maven.org/maven2/com/savoirtech/aetos/aetos/
+Aetos can be built from source, or obtained as binary from Maven Central:
+
+1. http://maven-repository.com/artifact/com.savoirtech.aetos/aetos
+2. http://repo1.maven.org/maven2/com/savoirtech/aetos/aetos
 
 Checking out Aetos from GitHub:
 -------------------------------
 
 1. git clone https://github.com/savoirtech/aetos.git
 2. cd aetos
-3. git checkout branch-name 
+3. git checkout branch-name
+
+Note: use git branch -a to see all Aetos development branches.
 
 Building Aetos:
 ---------------
