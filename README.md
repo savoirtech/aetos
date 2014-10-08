@@ -6,8 +6,7 @@ Aetos Integration Platform
 
 Aetos can be built from source, or obtained as binary from Maven Central:
 
-1. http://maven-repository.com/artifact/com.savoirtech.aetos/aetos
-2. http://repo1.maven.org/maven2/com/savoirtech/aetos/aetos
+1. http://repo1.maven.org/maven2/com/savoirtech/aetos/aetos
 
 Checking out Aetos from GitHub:
 -------------------------------
