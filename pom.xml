@@ -32,7 +32,7 @@
         <url>https://github.com/savoirtech/aetos</url>
         <connection>scm:git:git@github.com:savoirtech/aetos.git</connection>
         <developerConnection>scm:git:git@github.com:savoirtech/aetos.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>3.0.x</tag>
     </scm>
 
     <repositories>
