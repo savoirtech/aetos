@@ -137,8 +137,8 @@
     <files>
         <file>
             <source>${basedir}/target/classes/features.xml</source>
-            <outputDirectory>/system/com/savoirtech/savoir-esb/${project.version}</outputDirectory>
-            <destName>savoir-esb-${project.version}-features.xml</destName>
+            <outputDirectory>/system/com/savoirtech/aetos/aetos/${project.version}</outputDirectory>
+            <destName>aetos-${project.version}-features.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>dos</lineEnding>
         </file>
@@ -152,29 +152,29 @@
     </files>
 
     <dependencySets>
-           <dependencySet>
-               <outputDirectory>/system</outputDirectory>
-               <outputFileNameMapping>
-                   org/apache/activemq/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}
-               </outputFileNameMapping>
-               <unpack>false</unpack>
-               <scope>runtime</scope>
-               <includes>
-                   <include>org.apache.activemq:activemq-karaf:xml:features</include>
-               </includes>
-           </dependencySet>
-           <dependencySet>
-               <outputDirectory>/system</outputDirectory>
-               <outputFileNameMapping>
-                   org/apache/camel/karaf/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}
-               </outputFileNameMapping>
-               <unpack>false</unpack>
-               <scope>runtime</scope>
-               <includes>
-                   <include>org.apache.camel.karaf:apache-camel:xml:features</include>
-               </includes>
-           </dependencySet>
+        <dependencySet>
+            <outputDirectory>/system</outputDirectory>
+            <outputFileNameMapping>
+                org/apache/activemq/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}
+            </outputFileNameMapping>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <includes>
+                <include>org.apache.activemq:activemq-karaf:xml:features</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/system</outputDirectory>
+            <outputFileNameMapping>
+                org/apache/camel/karaf/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}
+            </outputFileNameMapping>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <includes>
+                <include>org.apache.camel.karaf:apache-camel:xml:features</include>
+            </includes>
+        </dependencySet>
 
-       </dependencySets>
+    </dependencySets>
 
 </assembly>
