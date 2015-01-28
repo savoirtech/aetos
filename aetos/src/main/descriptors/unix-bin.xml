@@ -62,6 +62,7 @@
                 <include>bin/admin</include>
                 <include>bin/karaf</include>
                 <!-- we need this one in here for admin:create'd instances to work -->
+                <include>bin/client</include>
                 <include>bin/start</include>
                 <include>bin/stop</include>
                 <include>bin/setenv</include>

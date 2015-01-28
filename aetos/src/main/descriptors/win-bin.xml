@@ -60,6 +60,7 @@
                 <include>admin.bat</include>
                 <include>karaf.bat</include>
                 <!-- we need this one in here for admin:create'd instances to work -->
+                <include>client.bat</include>
                 <include>start.bat</include>
                 <include>stop.bat</include>
             </includes>
@@ -74,6 +75,7 @@
                 <include>admin</include>
                 <include>karaf</include>
                 <!-- we need this one in here for admin:create'd instances to work -->
+                <include>client</include>
                 <include>start</include>
                 <include>stop</include>
             </includes>
