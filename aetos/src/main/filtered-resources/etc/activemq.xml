@@ -62,7 +62,7 @@
                     <memoryUsage limit="${amq.memoryUsage}"/>
                 </memoryUsage>
                 <storeUsage>
-                    <storeUsage limit="${amq.storeUage}"/>
+                    <storeUsage limit="${amq.storeUsage}"/>
                 </storeUsage>
                 <tempUsage>
                     <tempUsage limit="${amq.tempUsage}"/>

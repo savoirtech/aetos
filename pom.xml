@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <version>9</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -26,8 +26,7 @@
 
         <activemq.version>5.11.1</activemq.version>
         <camel.version>2.14.2</camel.version>
-        <camel.activemq.version>5.11.1</camel.activemq.version>
-        <cxf.version>3.0.1</cxf.version>
+        <cxf.version>3.0.5</cxf.version>
         <karaf.version>3.0.3</karaf.version>
         <ehcache.version>2.3.0_3</ehcache.version>
 
@@ -54,6 +53,7 @@
     </scm>
 
     <modules>
+        <!--<module>plugin</module>-->
         <module>features</module>
         <module>aetos</module>
     </modules>

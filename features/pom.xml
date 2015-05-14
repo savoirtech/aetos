@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>features</artifactId>
-    <name>Aetos Integration Platform ::: Features</name>
+    <name>Aetos Integration Platform :: Features</name>
 
 
     <build>
