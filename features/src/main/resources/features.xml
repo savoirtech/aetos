@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="com.savoirtech.aetos-${project.version}">
 
     <repository>mvn:org.apache.karaf.features/standard/${karaf.version}/xml/features</repository>
     <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
     <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</repository>
 
-    <feature name="savoir-core" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-core" version="${project.version}" resolver="(obr)">
         <feature version="${camel.version}">camel</feature>
         <feature version="${camel.version}">camel-blueprint</feature>
-
         <feature version="${camel.version}">camel-jms</feature>
         <feature version="${camel.version}">camel-cxf</feature>
+
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ehcache/${ehcache.version}</bundle>
     </feature>
-    <feature name="savoir-test" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-test" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-test</feature>
     </feature>
-    <feature name="savoir-messaging" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-messaging" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature>activemq-camel</feature>
     </feature>
-    <feature name="savoir-ws" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-ws" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-http</feature>
         <feature version="${camel.version}">camel-http4</feature>
@@ -31,33 +31,43 @@
         <feature version="${camel.version}">camel-jaxb</feature>
         <feature>jetty</feature>
     </feature>
-    <feature name="savoir-logging" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-logging" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-paxlogging</feature>
         <feature version="${camel.version}">camel-syslog</feature>
     </feature>
-    <feature name="savoir-monitoring" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-monitoring" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-jmx</feature>
         <feature version="${camel.version}">camel-nagios</feature>
     </feature>
-    <feature name="savoir-encryption" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-encryption" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-crypto</feature>
         <feature version="${camel.version}">camel-jasypt</feature>
     </feature>
-    <feature name="savoir-ldap" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-ldap" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-ldap</feature>
     </feature>
-    <feature name="savoir-scheduler" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-scheduler" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-quartz</feature>
     </feature>
-    <feature name="savoir-system" version="${project.version}" resolver='(obr)'>
+    <feature name="savoir-system" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-syslog</feature>
         <feature version="${camel.version}">camel-exec</feature>
     </feature>
-
+    <feature name="savoir-ctop" version="${project.version}" resolver="(obr)">
+        <feature version="${camel.version}">camel</feature>
+        <bundle>mvn:com.savoirtech.karaf.commands/ctop/${ctop.version}</bundle>
+    </feature>
+    <feature name="savoir-ktop" version="${project.version}" resolver="(obr)">
+        <bundle>mvn:com.savoirtech.karaf.commands/ktop/${ktop.version}</bundle>
+    </feature>
+    <feature name="savoir-monitoring" version="${project.version}" resolver="(obr)">
+        <feature version="${project.version}">savoir-ctop</feature>
+        <feature version="${project.version}">savoir-ktop</feature>
+    </feature>
 </features>

@@ -140,6 +140,7 @@
                         <bootFeature>jndi</bootFeature>
                         <bootFeature>activemq</bootFeature>
                         <bootFeature>savoir-core</bootFeature>
+                        <bootFeature>savoir-monitoring</bootFeature>
                     </bootFeatures>
                 </configuration>
 
