@@ -2,6 +2,8 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="com.savoirtech.aetos-${project.version}">
 
     <repository>mvn:org.apache.karaf.features/standard/${karaf.version}/xml/features</repository>
+    <repository>mvn:org.apache.karaf.features/enterprise/${karaf.version}/xml/features</repository>
+    <repository>mvn:org.apache.karaf.features/spring/${karaf.version}/xml/features</repository>
     <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
     <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</repository>
 
@@ -10,7 +12,6 @@
         <feature version="${camel.version}">camel-blueprint</feature>
         <feature version="${camel.version}">camel-jms</feature>
         <feature version="${camel.version}">camel-cxf</feature>
-
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ehcache/${ehcache.version}</bundle>
     </feature>
     <feature name="savoir-test" version="${project.version}" resolver="(obr)">
@@ -36,12 +37,7 @@
         <feature version="${camel.version}">camel-paxlogging</feature>
         <feature version="${camel.version}">camel-syslog</feature>
     </feature>
-    <feature name="savoir-monitoring" version="${project.version}" resolver="(obr)">
-        <feature version='${project.version}'>savoir-core</feature>
-        <feature version="${camel.version}">camel-jmx</feature>
-        <feature version="${camel.version}">camel-nagios</feature>
-    </feature>
-    <feature name="savoir-encryption" version="${project.version}" resolver="(obr)">
+   <feature name="savoir-encryption" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>savoir-core</feature>
         <feature version="${camel.version}">camel-crypto</feature>
         <feature version="${camel.version}">camel-jasypt</feature>
