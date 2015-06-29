@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.savoirtech.aetos</groupId>
     <artifactId>aetos-parent</artifactId>
-    <version>3.0.3.0-SNAPSHOT</version>
+    <version>3.0.4.0-SNAPSHOT</version>
     <name>Aetos Integration Platform :: Parent</name>
     <packaging>pom</packaging>
 
@@ -25,11 +25,11 @@
         <maven.compiler.target>1.6</maven.compiler.target>
 
         <activemq.version>5.11.1</activemq.version>
-        <camel.version>2.14.2</camel.version>
+        <camel.version>2.15.2</camel.version>
         <cxf.version>3.0.5</cxf.version>
         <ctop.version>0.1.0</ctop.version>
         <hecate.version>2.0.1</hecate.version>
-        <karaf.version>3.0.3</karaf.version>
+        <karaf.version>3.0.4</karaf.version>
         <karakka.version>1.0.0-SNAPSHOT</karakka.version>
         <ktop.version>0.2.0.M1</ktop.version>
         <ehcache.version>2.3.0_3</ehcache.version>
@@ -45,7 +45,7 @@
         -->
         <amq.maxConnections>10000</amq.maxConnections>
         <amq.memoryUsage>64 mb</amq.memoryUsage>
-        <amq.storeUage>100 gb</amq.storeUage>
+        <amq.storeUsage>100 gb</amq.storeUsage>
         <amq.tempUsage>50 gb</amq.tempUsage>
         <amq.maxConnections>10000</amq.maxConnections>
     </properties>
@@ -62,4 +62,29 @@
         <module>features</module>
         <module>aetos</module>
     </modules>
+
+    <!--
+    Karaf Staging Repository (for testing RCs)
+    -->
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>karaf-3.0.4-staging</id>-->
+            <!--<name>Karaf 3.0.4 Staging Repository</name>-->
+            <!--<url>https://repository.apache.org/content/repositories/orgapachekaraf-1034</url>-->
+            <!--&lt;!&ndash;<releases>&ndash;&gt;-->
+                <!--&lt;!&ndash;<enabled>true</enabled>&ndash;&gt;-->
+                <!--&lt;!&ndash;<checksumPolicy>fail</checksumPolicy>&ndash;&gt;-->
+            <!--&lt;!&ndash;</releases>&ndash;&gt;-->
+            <!--&lt;!&ndash;<snapshots>&ndash;&gt;-->
+                <!--&lt;!&ndash;<enabled>false</enabled>&ndash;&gt;-->
+            <!--&lt;!&ndash;</snapshots>&ndash;&gt;-->
+        <!--</repository>-->
+    <!--</repositories>-->
+    <!--<pluginRepositories>-->
+        <!--<pluginRepository>-->
+            <!--<id>karaf-3.0.4-staging</id>-->
+            <!--<name>Karaf 3.0.4 Staging Repository</name>-->
+            <!--<url>https://repository.apache.org/content/repositories/orgapachekaraf-1034</url>-->
+        <!--</pluginRepository>-->
+    <!--</pluginRepositories>-->
 </project>
