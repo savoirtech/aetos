@@ -63,28 +63,29 @@
         <module>aetos</module>
     </modules>
 
-    <!--
-    Karaf Staging Repository (for testing RCs)
-    -->
-    <!--<repositories>-->
+    <repositories>
+        <repository>
+            <id>servicemix</id>
+            <name>Apache ServiceMix Repository</name>
+            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
         <!--<repository>-->
             <!--<id>karaf-3.0.4-staging</id>-->
             <!--<name>Karaf 3.0.4 Staging Repository</name>-->
             <!--<url>https://repository.apache.org/content/repositories/orgapachekaraf-1034</url>-->
-            <!--&lt;!&ndash;<releases>&ndash;&gt;-->
-                <!--&lt;!&ndash;<enabled>true</enabled>&ndash;&gt;-->
-                <!--&lt;!&ndash;<checksumPolicy>fail</checksumPolicy>&ndash;&gt;-->
-            <!--&lt;!&ndash;</releases>&ndash;&gt;-->
-            <!--&lt;!&ndash;<snapshots>&ndash;&gt;-->
-                <!--&lt;!&ndash;<enabled>false</enabled>&ndash;&gt;-->
-            <!--&lt;!&ndash;</snapshots>&ndash;&gt;-->
         <!--</repository>-->
-    <!--</repositories>-->
-    <!--<pluginRepositories>-->
+    </repositories>
+    <pluginRepositories>
         <!--<pluginRepository>-->
             <!--<id>karaf-3.0.4-staging</id>-->
             <!--<name>Karaf 3.0.4 Staging Repository</name>-->
             <!--<url>https://repository.apache.org/content/repositories/orgapachekaraf-1034</url>-->
         <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
+    </pluginRepositories>
 </project>
