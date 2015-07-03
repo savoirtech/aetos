@@ -14,10 +14,6 @@
     <name>Aetos Integration Platform :: Parent</name>
     <packaging>pom</packaging>
 
-    <prerequisites>
-        <maven>3.0.5</maven>
-    </prerequisites>
-
     <properties>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,10 +26,8 @@
         <ctop.version>0.1.0</ctop.version>
         <hecate.version>2.0.1</hecate.version>
         <karaf.version>3.0.4</karaf.version>
-        <karakka.version>1.0.1</karakka.version>
         <ktop.version>0.2.0.M1</ktop.version>
         <ehcache.version>2.3.0_3</ehcache.version>
-
 
         <!--
         CXF Settings
@@ -75,17 +69,5 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <repository>
-            <id>karaf-3.0.4-staging</id>
-            <name>Karaf 3.0.4 Staging Repository</name>
-            <url>https://repository.apache.org/content/repositories/orgapachekaraf-1034</url>
-        </repository>
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>karaf-3.0.4-staging</id>
-            <name>Karaf 3.0.4 Staging Repository</name>
-            <url>https://repository.apache.org/content/repositories/orgapachekaraf-1034</url>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
