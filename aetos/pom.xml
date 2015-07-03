@@ -130,8 +130,8 @@
                         <bootFeature>jpa</bootFeature>
                         <bootFeature>jndi</bootFeature>
                         <bootFeature>activemq</bootFeature>
-                        <bootFeature>savoir-core</bootFeature>
-                        <bootFeature>savoir-monitoring</bootFeature>
+                        <bootFeature>aetos-core</bootFeature>
+                        <bootFeature>aetos-monitoring</bootFeature>
                     </bootFeatures>
                 </configuration>
 
