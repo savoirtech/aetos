@@ -48,7 +48,6 @@
         <url>https://github.com/savoirtech/aetos</url>
         <connection>scm:git:git@github.com:savoirtech/aetos.git</connection>
         <developerConnection>scm:git:git@github.com:savoirtech/aetos.git</developerConnection>
-        <tag>3.0.2</tag>
     </scm>
 
     <modules>
