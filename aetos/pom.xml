@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.savoirtech.aetos</groupId>
         <artifactId>aetos-parent</artifactId>
-        <version>3.0.4.1-SNAPSHOT</version>
+        <version>4.0.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>aetos</artifactId>
@@ -74,7 +74,7 @@
         <dependency>
             <groupId>com.savoirtech.aetos</groupId>
             <artifactId>features</artifactId>
-            <version>3.0.4.1-SNAPSHOT</version>
+            <version>4.0.1.0-SNAPSHOT</version>
             <type>xml</type>
             <classifier>features</classifier>
             <scope>runtime</scope>
@@ -116,21 +116,26 @@
                 <extensions>true</extensions>
                 <configuration>
                     <bootFeatures>
+                        <bootFeature>aries-blueprint</bootFeature>
+                        <bootFeature>bundle</bootFeature>
                         <bootFeature>config</bootFeature>
-                        <bootFeature>standard</bootFeature>
-                        <bootFeature>region</bootFeature>
-                        <bootFeature>package</bootFeature>
+                        <bootFeature>deployer</bootFeature>
+                        <bootFeature>diagnostic</bootFeature>
+                        <bootFeature>feature</bootFeature>
+                        <bootFeature>instance</bootFeature>
+                        <bootFeature>jaas</bootFeature>
                         <bootFeature>kar</bootFeature>
-                        <bootFeature>ssh</bootFeature>
+                        <bootFeature>log</bootFeature>
                         <bootFeature>management</bootFeature>
-                        <bootFeature>obr</bootFeature>
-                        <bootFeature>war</bootFeature>
-                        <bootFeature>transaction</bootFeature>
-                        <bootFeature>jpa</bootFeature>
-                        <bootFeature>jndi</bootFeature>
-                        <bootFeature>activemq</bootFeature>
+                        <bootFeature>package</bootFeature>
+                        <bootFeature>service</bootFeature>
+                        <bootFeature>shell</bootFeature>
+                        <bootFeature>shell-compat</bootFeature>
+                        <bootFeature>ssh</bootFeature>
+                        <bootFeature>system</bootFeature>
+                        <bootFeature>wrap</bootFeature>
                         <bootFeature>aetos-core</bootFeature>
-                        <bootFeature>aetos-monitoring</bootFeature>
+                        <!--<bootFeature>aetos-monitoring</bootFeature>-->
                     </bootFeatures>
                 </configuration>
 
