@@ -20,14 +20,13 @@
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
 
-        <activemq.version>5.11.2</activemq.version>
-        <camel.version>2.15.3</camel.version>
-        <cxf.version>3.0.6</cxf.version>
+        <activemq.version>5.12.0</activemq.version>
+        <camel.version>2.16.0</camel.version>
+        <cxf.version>3.1.3</cxf.version>
         <ctop.version>0.1.0</ctop.version>
-        <hecate.version>2.0.7</hecate.version>
+        <hecate.version>2.0.8</hecate.version>
         <karaf.version>4.0.1</karaf.version>
         <ktop.version>0.2.0.M1</ktop.version>
-        <ehcache.version>2.3.0_3</ehcache.version>
 
         <!--
         CXF Settings
@@ -51,7 +50,6 @@
     </scm>
 
     <modules>
-        <!--<module>plugin</module>-->
         <module>features</module>
         <module>aetos</module>
     </modules>

@@ -135,7 +135,6 @@
                         <bootFeature>system</bootFeature>
                         <bootFeature>wrap</bootFeature>
                         <bootFeature>aetos-core</bootFeature>
-                        <!--<bootFeature>aetos-monitoring</bootFeature>-->
                     </bootFeatures>
                 </configuration>
 

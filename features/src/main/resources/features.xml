@@ -12,7 +12,6 @@
         <feature version="${camel.version}">camel-blueprint</feature>
         <feature version="${camel.version}">camel-jms</feature>
         <feature version="${camel.version}">camel-cxf</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ehcache/${ehcache.version}</bundle>
     </feature>
     <feature name="aetos-test" version="${project.version}" resolver="(obr)">
         <feature version='${project.version}'>aetos-core</feature>
