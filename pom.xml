@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.savoirtech.aetos</groupId>
     <artifactId>aetos-parent</artifactId>
-    <version>3.0.5.1-SNAPSHOT</version>
+    <version>3.0.5.1</version>
     <name>Aetos Integration Platform :: Parent</name>
     <packaging>pom</packaging>
 
