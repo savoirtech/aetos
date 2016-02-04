@@ -20,7 +20,7 @@
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
 
-        <activemq.version>5.12.2</activemq.version>
+        <activemq.version>5.13.0</activemq.version>
         <camel.version>2.16.2</camel.version>
         <cxf.version>3.1.4</cxf.version>
         <ctop.version>0.1.0</ctop.version>
