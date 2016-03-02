@@ -116,11 +116,15 @@
                 <extensions>true</extensions>
                 <executions>
                     <execution>
-                        <id>assembly</id>
+                        <id>default-assembly</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>aetos-assembly</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>assembly</goal>
                         </goals>
-                        <phase>package</phase>
                     </execution>
                 </executions>
                 <configuration>
