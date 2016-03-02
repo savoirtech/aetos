@@ -120,10 +120,21 @@
                         <phase>none</phase>
                     </execution>
                     <execution>
+                        <id>default-archive</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
                         <id>aetos-assembly</id>
                         <phase>package</phase>
                         <goals>
                             <goal>assembly</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>aetos-archive</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>archive</goal>
                         </goals>
                     </execution>
                 </executions>
