@@ -114,6 +114,15 @@
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>${karaf.version}</version>
                 <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>assembly</id>
+                        <goals>
+                            <goal>assembly</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
                 <configuration>
                     <bootFeatures>
                         <bootFeature>aries-blueprint</bootFeature>
