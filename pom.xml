@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.savoirtech.aetos</groupId>
     <artifactId>aetos-parent</artifactId>
-    <version>4.0.4.0-SNAPSHOT</version>
+    <version>4.0.2.0-SNAPSHOT</version>
     <name>Aetos Integration Platform :: Parent</name>
     <packaging>pom</packaging>
 
@@ -25,7 +25,7 @@
         <cxf.version>3.1.4</cxf.version>
         <ctop.version>0.1.0</ctop.version>
         <hecate.version>2.0.8</hecate.version>
-        <karaf.version>4.0.4</karaf.version>
+        <karaf.version>4.0.2</karaf.version>
         <ktop.version>0.2.0.M1</ktop.version>
 
         <!--
