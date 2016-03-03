@@ -139,6 +139,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <localRepo>${settings.localRepository}</localRepo>
                     <bootFeatures>
                         <bootFeature>aries-blueprint</bootFeature>
                         <bootFeature>bundle</bootFeature>
