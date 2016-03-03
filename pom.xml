@@ -54,19 +54,6 @@
         <module>aetos</module>
     </modules>
 
-    <repositories>
-        <repository>
-            <id>local-jenkins-repo</id>
-            <name>local repository</name>
-            <url>file:/var/lib/jenkins/.m2/repository</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
     <build>
         <plugins>
             <plugin>
