@@ -114,30 +114,30 @@
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>${karaf.version}</version>
                 <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <id>default-assembly</id>
-                        <phase>none</phase>
-                    </execution>
-                    <execution>
-                        <id>default-archive</id>
-                        <phase>none</phase>
-                    </execution>
-                    <execution>
-                        <id>aetos-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>assembly</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>aetos-archive</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>archive</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>default-assembly</id>-->
+                        <!--<phase>none</phase>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>default-archive</id>-->
+                        <!--<phase>none</phase>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>aetos-assembly</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>assembly</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>aetos-archive</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>archive</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
                 <configuration>
                     <bootFeatures>
                         <bootFeature>aries-blueprint</bootFeature>
