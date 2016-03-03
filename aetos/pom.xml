@@ -139,7 +139,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <localRepo>${user.home}/.m2/repository</localRepo>
+                    <repository>${user.home}/.m2/reopsitory</repository>
                     <bootFeatures>
                         <bootFeature>aries-blueprint</bootFeature>
                         <bootFeature>bundle</bootFeature>
