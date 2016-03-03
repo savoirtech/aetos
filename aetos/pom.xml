@@ -114,6 +114,15 @@
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>${karaf.version}</version>
                 <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>install-kar</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>assembly</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <!--<executions>-->
                     <!--<execution>-->
                         <!--<id>default-assembly</id>-->
