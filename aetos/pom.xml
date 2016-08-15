@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.savoirtech.aetos</groupId>
         <artifactId>aetos-parent</artifactId>
-        <version>4.0.4.1-SNAPSHOT</version>
+        <version>4.0.5.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>aetos</artifactId>
@@ -21,6 +21,16 @@
             <version>${karaf.version}</version>
             <type>kar</type>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>spring</artifactId>
+            <classifier>features</classifier>
+            <version>${karaf.version}</version>
+            <type>xml</type>
+            <scope>runtime</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>org.apache.karaf.features</groupId>
@@ -74,7 +84,7 @@
         <dependency>
             <groupId>com.savoirtech.aetos</groupId>
             <artifactId>features</artifactId>
-            <version>4.0.4.1-SNAPSHOT</version>
+            <version>4.0.5.0-SNAPSHOT</version>
             <type>xml</type>
             <classifier>features</classifier>
             <scope>runtime</scope>
