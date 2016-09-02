@@ -209,19 +209,19 @@
         },
         {
           "_name": "content1",
+          "_styles": {
+            "P": {
+              "font-family": "'Lato', sans-serif",
+              "googleLink": "https://fonts.googleapis.com/css?family=Lato:400,300,700"
+            }
+          },
           "_anchor": "content1-1",
           "_params": {
             "paddingTop": 1,
             "paddingBottom": 1,
             "bgColor": "#fff"
           },
-          "text": "<p>Aetos is an Apache Karaf container bult with some of the best Apache projects embedded inside. &nbsp; These projects are best-in-breed, meaning they are the top quality projects that are at times included as parts of other commercial containers. &nbsp;Why Apache Karaf? &nbsp;Because it's a full service modular container (more on that later) with an OSGi runtime as a kernel subsystem. &nbsp;Its kind of like running your own Java based operating system, with a full SSH console to boot! &nbsp;The components are the API's that let you build your services and routes which you can expose to the outside world. &nbsp;What are these awesome Apache projects?</p>",
-          "_styles": {
-            "P": {
-              "font-family": "'Lato', sans-serif",
-              "googleLink": "https://fonts.googleapis.com/css?family=Lato:400,300,700"
-            }
-          }
+          "text": "<p>Aetos is an Apache Karaf container bult with some of the best Apache projects embedded inside. &nbsp; These projects are best-in-breed, meaning they are the top quality projects that are at times included as parts of other commercial containers. &nbsp;Why Apache Karaf? &nbsp;Because it's a full service modular container (more on that later) with an OSGi runtime as a kernel subsystem. &nbsp;Its kind of like running your own Java based operating system, with a full SSH console to boot! &nbsp;The components are the API's that let you build your services and routes which you can expose to the outside world. &nbsp;What are these awesome Apache projects?</p>"
         },
         {
           "_name": "features3",
@@ -553,7 +553,7 @@
             "overlayColor": "#222"
           },
           "text": "<span style=\"font-weight: normal;\">FOLLOW US</span>",
-          "icons": "<a data-app-btn=\"true\" class=\"btn btn-social\" title=\"Twitter\" target=\"_blank\" href=\"https://twitter.com/savoirtech\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrFonts,-mbrFontSize,-mbrBtnColor\"><i class=\"socicon socicon-twitter\"></i></a> <a data-app-btn=\"true\" class=\"btn btn-social\" title=\"Facebook\" target=\"_blank\" href=\"https://github.com/savoirtech/aetos\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrFonts,-mbrFontSize,-mbrBtnColor\"><i class=\"socicon socicon-github\"></i></a>      <a data-app-btn=\"true\" class=\"btn btn-social\" title=\"LinkedIn\" target=\"_blank\" href=\"https://www.linkedin.com/in/mobirise\"><i class=\"socicon socicon-linkedin\"></i></a>   "
+          "icons": "<a data-app-btn=\"true\" class=\"btn btn-social\" title=\"Twitter\" target=\"_blank\" href=\"https://twitter.com/savoirtech\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrFonts,-mbrFontSize,-mbrBtnColor\"><i class=\"socicon socicon-twitter\"></i></a> <a data-app-btn=\"true\" class=\"btn btn-social\" title=\"Facebook\" target=\"_blank\" href=\"https://github.com/savoirtech/aetos\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrFonts,-mbrFontSize,-mbrBtnColor\"><i class=\"socicon socicon-github\"></i></a>      <a data-app-btn=\"true\" class=\"btn btn-social\" title=\"LinkedIn\" target=\"_blank\" href=\"https://www.linkedin.com/company/savoir-technologies\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrFonts,-mbrFontSize,-mbrBtnColor\"><i class=\"socicon socicon-linkedin\"></i></a>   "
         }
       ]
     }
