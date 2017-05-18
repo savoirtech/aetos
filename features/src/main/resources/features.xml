@@ -48,15 +48,4 @@
         <feature>camel-syslog</feature>
         <feature>camel-exec</feature>
     </feature>
-    <feature name="aetos-ctop" version="${project.version}">
-        <feature>camel</feature>
-        <bundle>mvn:com.savoirtech.karaf.commands/ctop/${ctop.version}</bundle>
-    </feature>
-    <feature name="aetos-ktop" version="${project.version}">
-        <bundle>mvn:com.savoirtech.karaf.commands/ktop/${ktop.version}</bundle>
-    </feature>
-    <feature name="aetos-monitoring" version="${project.version}">
-        <feature version="${project.version}">aetos-ctop</feature>
-        <feature version="${project.version}">aetos-ktop</feature>
-    </feature>
 </features>
