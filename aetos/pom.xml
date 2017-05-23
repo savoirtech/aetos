@@ -121,7 +121,6 @@
                         <bootFeature>deployer</bootFeature>
                         <bootFeature>diagnostic</bootFeature>
                         <bootFeature>feature</bootFeature>
-                        <bootFeature>framework</bootFeature>
                         <bootFeature>instance</bootFeature>
                         <bootFeature>jaas</bootFeature>
                         <bootFeature>kar</bootFeature>
