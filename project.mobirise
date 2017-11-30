@@ -166,7 +166,7 @@
               "active": true,
               "width": 1400,
               "src": "@PROJECT_PATH@/assets/images/microservices.svg",
-              "link": "@PROJECT_PATH@/assets/images/microservices0.svg",
+              "link": "@PROJECT_PATH@/assets/images/microservices1.svg",
               "alt": "",
               "title": "",
               "linkInNewWindow": false
