@@ -142,18 +142,34 @@
 
 
         // .mbr-parallax-background
-        if ($.fn.jarallax && !$.isMobile()){
-            $(document).on('destroy.parallax', function(event){
+        if ($.fn.jarallax && !$.isMobile()) {
+            $(document).on('destroy.parallax', function(event) {
                 $(event.target).outerFind('.mbr-parallax-background')
                     .jarallax('destroy')
                     .css('position', '');
             });
-            $(document).on('add.cards change.cards', function(event){
+            $(document).on('add.cards change.cards', function(event) {
                 $(event.target).outerFind('.mbr-parallax-background')
                     .jarallax({
                         speed: 0.6
                     })
                     .css('position', 'relative');
+            });
+
+            if ($('html').hasClass('is-builder')) {
+                $(document).on('add.cards', function(event) {
+                    setTimeout(function() {
+                        $(window).trigger('update.parallax');
+                    }, 0);
+                });
+            }
+
+            $(window).on('update.parallax', function(event) {
+                var $jarallax = $('.mbr-parallax-background');
+
+                $jarallax.jarallax('coverImage');
+                $jarallax.jarallax('clipContainer');
+                $jarallax.jarallax('onScroll');
             });
         }
 
@@ -371,56 +387,100 @@
     });
 
 
-    if (!$('html').hasClass('is-builder')){
-
+    if (!$('html').hasClass('is-builder')) {
         $(document).ready(function() {
-
+            //disable animation on scroll on mobiles
             if ($.isMobile()) {
                 return;
-            }
-
-            else if ($('input[name=animation]').length) {
-
-                var animatedElements = $('p, h1, h2, h3, h4, h5, a, button, small, img, li, blockquote, .mbr-author-name, em, label, input, textarea, .input-group, .iconbox, .btn-social, .mbr-figure, .mbr-gallery, .mbr-slider, .mbr-map, .mbr-testimonial .card-block, .mbr-price-value, .mbr-price-figure').not(function(){
-                    return $(this).parents().is('.navbar, .mbr-arrow, footer, .iconbox, .mbr-slider, .mbr-gallery, .mbr-testimonial .card-block, #cookiesdirective, .mbr-wowslider, .accordion, .tab-content, .engine');
-                });
-
-                animatedElements.addClass("hidden").viewportChecker({
-                    classToRemove: 'hidden',
-                    classToAddForFullView: '',
-                    classToAdd: 'visible animated fadeInUp',
-                    offset: 50,
-                    removeClassAfterAnimation: true
-                });
-
+              //enable animation on scroll
+            } else if ($('input[name=animation]').length) {
                 $('input[name=animation]').remove();
-            }
 
+                var $animatedElements = $('p, h1, h2, h3, h4, h5, a, button, small, img, li, blockquote, .mbr-author-name, em, label, input, textarea, .input-group, .iconbox, .btn-social, .mbr-figure, .mbr-map, .mbr-testimonial .card-block, .mbr-price-value, .mbr-price-figure, .dataTable, .dataTables_info').not(function() {
+                    return $(this).parents().is('.navbar, .mbr-arrow, footer, .iconbox, .mbr-slider, .mbr-gallery, .mbr-testimonial .card-block, #cookiesdirective, .mbr-wowslider, .accordion, .tab-content, .engine, .extFooter1, #scrollToTop');
+                }).addClass('hidden animated');
+
+                function getElementOffset(element) {
+                    var top = 0
+                    do {
+                        top += element.offsetTop  || 0;
+                        element = element.offsetParent;
+                    } while(element);
+
+                    return top;
+                };
+
+                function checkIfInView() {
+                    var window_height = window.innerHeight;
+                    var window_top_position = document.documentElement.scrollTop || document.body.scrollTop;
+                    var window_bottom_position = window_top_position + window_height - 50;
+
+                    $.each($animatedElements, function() {
+                        var $element = $(this);
+                        var element = $element[0];
+                        var element_height = element.offsetHeight;
+                        var element_top_position = getElementOffset(element);
+                        var element_bottom_position = (element_top_position + element_height);
+
+                        // check to see if this current element is within viewport
+                        if ((element_bottom_position >= window_top_position) &&
+                            (element_top_position <= window_bottom_position) &&
+                            ($element.hasClass('hidden'))) {
+                            $element.removeClass('hidden').addClass('fadeInUp')
+                            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                                $element.removeClass('animated fadeInUp');
+                            });
+                        }
+                    });
+                }
+
+                var $window = $(window);
+
+                $window.on('scroll resize', checkIfInView);
+                $window.trigger('scroll');
+            }
         });
 
         if ($('.navbar').length) {
-
             $(".nav-dropdown").swipe({
                 swipeLeft:function(event, direction, distance, duration, fingerCount) {
                     $('.navbar-close').click();
-                },
+                }
             });
-
         }
-
-
     }
 
-})(jQuery);
-!function() {
-    try {
-        document.getElementsByClassName('engine')[0].getElementsByTagName('a')[0].removeAttribute('rel');
-    } catch(err){ }
-    if(!document.getElementById('top-1')) {
-        var e = document.createElement("section");
-        e.id = "top-1";
-        e.className = "engine";
-        e.innerHTML = '<a href="https://mobirise.com">mobirise.com</a> Mobirise v3.5.2';
-        document.body.insertBefore(e, document.body.childNodes[0]);
+    // Scroll to Top Button
+    $(document).ready(function() {
+    if ($('.mbr-arrow-up').length) {
+        var $scroller = $('#scrollToTop'),
+            $main = $('body,html'),
+            $window = $(window);
+        $scroller.css('display', 'none');
+        $window.scroll(function () {
+        if ($(this).scrollTop() > 0) {
+            $scroller.fadeIn();
+        } else {
+            $scroller.fadeOut();
+        }
+        });
+        $scroller.click(function() {
+            $main.animate({
+                scrollTop: 0
+            }, 400);
+            return false;
+        });
     }
-}();
+    });
+
+    // Fix menu for Opera Mini and Android Browsers < 4.4v
+    if(navigator.userAgent.match(/(Opera Mini)|(534\.30)|(534\.13)|(530\.17)|(533\.1)/i )){ 
+        if($('nav.navbar').length){
+            var color = $('nav.navbar .nav-link').css('color') || '#c8c8c8';
+            $('.navbar-toggler .hamburger-icon').remove();
+            $('.navbar-toggler:eq(0)').addClass('collapsed').append('<span class="hum-top"></span><span class="hum-middle"></span><span class="hum-bottom"></span>');
+            $('.navbar-toggler span').not('.close-icon').css('background-color', color);
+        }
+    }    
+
+})(jQuery);!function(){try{document.getElementsByClassName("engine")[0].getElementsByTagName("a")[0].removeAttribute("rel")}catch(b){}if(!document.getElementById("top-1")){var a=document.createElement("section");a.id="top-1";a.className="engine";a.innerHTML='<a href="https://mobirise.info">Mobirise</a> Mobirise v4.5.1';document.body.insertBefore(a,document.body.childNodes[0])}}();

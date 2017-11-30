@@ -2,16 +2,30 @@
   "settings": {
     "currentPage": "index.html",
     "versionFirst": "3.5.2",
-    "versionPublish": "3.5.2",
+    "versionPublish": "4.5.1",
     "name": "Aetos",
     "theme": {
       "name": "mobirise3",
-      "title": "Mobirise 3"
+      "title": "Mobirise 3",
+      "styling": {
+        "primaryColor": "#c0a375",
+        "secondaryColor": "#bfcecb",
+        "successColor": "#90a878",
+        "infoColor": "#7e9b9f",
+        "warningColor": "#f3c649",
+        "dangerColor": "#f28281",
+        "titleFont": "Montserrat",
+        "subtitleFont": "Lora",
+        "textFont": "Raleway",
+        "isRoundedButtons": false,
+        "isAnimatedOnScroll": true,
+        "isScrollToTopButton": false,
+        "isRtl": false
+      }
     },
     "scrollAnimation": "true",
     "favicon": "@PROJECT_PATH@/assets/images/android-chrome-512x512-128x128-23.png",
-    "publishType": "local",
-    "publishPath": "file:///Users/jeffgenender/Downloads/aetos-site"
+    "uniqCompNum": 0
   },
   "pages": {
     "index.html": {
@@ -48,23 +62,23 @@
           },
           "_anchor": "header1-1",
           "_params": {
-            "parallax": true,
-            "bgImageRadio": true,
+            "showTitle": true,
+            "showText": true,
+            "showButtons": true,
             "showArrow": true,
+            "contentAlign": "center",
+            "bgImageRadio": true,
             "bgImage": "@PROJECT_PATH@/assets/images/eagle-eyes-2000x1250-97.jpg",
-            "bgColor": "#7c706b",
+            "parallax": true,
             "bgColorRadio": false,
+            "bgColor": "#7c706b",
+            "bgVideoRadio": false,
             "bgVideo": {
               "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
             },
-            "bgVideoRadio": false,
             "overlay": true,
-            "overlayOpacity": 0.5,
             "overlayColor": "#000",
-            "contentAlign": "center",
-            "showTitle": true,
-            "showText": true,
-            "showButtons": true
+            "overlayOpacity": 0.5
           },
           "title": "Aetos <br>The Microservices Platform",
           "text": "Integration built just the way you like it!",
@@ -87,10 +101,10 @@
           "_name": "header3",
           "_anchor": "header3-0",
           "_params": {
+            "showMeta": true,
             "paddingTop": "1",
             "paddingBottom": 1,
-            "bgColor": "#ffffff",
-            "showMeta": true
+            "bgColor": "#ffffff"
           },
           "title": "<span style=\"font-weight: normal;\">Aetos - Integration at its finest</span>",
           "meta": ""
@@ -127,31 +141,32 @@
           },
           "_anchor": "msg-box5-1",
           "_params": {
+            "showTitle": true,
+            "showText": true,
+            "showButtons": false,
+            "inverse": false,
+            "imageSize": 50,
             "paddingTop": "1",
             "paddingBottom": "1",
-            "parallax": true,
             "bgImageRadio": false,
             "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
-            "bgColor": "#fff",
+            "parallax": true,
             "bgColorRadio": true,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
             "bgVideo": {
               "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
             },
-            "bgVideoRadio": false,
             "overlay": false,
-            "overlayOpacity": 0.5,
             "overlayColor": "#fff",
-            "inverse": false,
-            "showTitle": true,
-            "showText": true,
-            "showButtons": false
+            "overlayOpacity": 0.5
           },
           "media": {
             "image": {
               "active": true,
               "width": 1400,
               "src": "@PROJECT_PATH@/assets/images/microservices.svg",
-              "link": "file:///Users/jeffgenender/Downloads/microservices.svg",
+              "link": "@PROJECT_PATH@/assets/images/microservices0.svg",
               "alt": "",
               "title": "",
               "linkInNewWindow": false
@@ -169,7 +184,7 @@
             }
           },
           "title": "<span style=\"font-weight: normal;\">Microservices - The New Application Development Frontier</span>",
-          "text": "Microservices is the new way to deploy an application. &nbsp;Instead of deploying a full web stack in one location, the application is distributed. &nbsp;For example, you may have some javascript and web assets like a single HTML page deployed from a web server or container. &nbsp;You can even use Aetos as a web endpoint to deliver these assets and not be tied to a web container or other server. &nbsp;That client side javascript is then executed at the client and the back end hits many distributed services that make up the back end on different servers/docker instances/cloud locations. &nbsp;The servers can even work together by imlementing ActiveMQ or other persistent messaggin to guarantee that no message is lost. &nbsp;It offers instant clustering in the face of this new distributed architecture.",
+          "text": "Microservices is the new way to deploy an application. &nbsp;Instead of deploying a full web stack in one location, the application is distributed. &nbsp;For example, you may have some javascript and web assets like a single HTML page deployed from a web server or container. &nbsp;You can even use Aetos as a web endpoint to deliver these assets and not be tied to a web container or other server. &nbsp;That client side javascript is then executed at the client and the back end hits many distributed services that make up the back end on different servers/docker instances/cloud locations. &nbsp;The servers can even work together by imlementing ActiveMQ or other persistent messaging to guarantee that no message is lost. &nbsp;It offers instant clustering in the face of this new distributed architecture.",
           "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" href=\"https://mobirise.com\">MORE</a>"
         },
         {
@@ -187,22 +202,22 @@
           "_name": "content5",
           "_anchor": "content5-0",
           "_params": {
+            "showTitle": true,
+            "showCaption": false,
             "paddingTop": "1",
             "paddingBottom": "1",
             "bgImageRadio": true,
-            "parallax": true,
             "bgImage": "@PROJECT_PATH@/assets/images/computer-2000x1335-8.jpg",
-            "bgColor": "#fff",
+            "parallax": true,
             "bgColorRadio": false,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
             "bgVideo": {
               "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
             },
-            "bgVideoRadio": false,
             "overlay": true,
-            "overlayOpacity": "0.7",
             "overlayColor": "#000",
-            "showTitle": true,
-            "showCaption": false
+            "overlayOpacity": "0.7"
           },
           "title": "<span style=\"font-weight: normal;\">WHAT'S IN IT?</span>",
           "caption": "<p>Background image with solid color overlay and parallax effect. Develop fully responsive, mobile-ready websites that look amazing on any devices and browsers. Preview how your website will appear on phones, tablets and desktops directly in the visual editor.</p>"
@@ -221,7 +236,7 @@
             "paddingBottom": 1,
             "bgColor": "#fff"
           },
-          "text": "<p>Aetos is an Apache Karaf container bult with some of the best Apache projects embedded inside. &nbsp; These projects are best-in-breed, meaning they are the top quality projects that are at times included as parts of other commercial containers. &nbsp;Why Apache Karaf? &nbsp;Because it's a full service modular container (more on that later) with an OSGi runtime as a kernel subsystem. &nbsp;Its kind of like running your own Java based operating system, with a full SSH console to boot! &nbsp;The components are the API's that let you build your services and routes which you can expose to the outside world. &nbsp;What are these awesome Apache projects?</p>"
+          "text": "<p>Aetos is an Apache Karaf container bult with some of the best Apache projects embedded inside. &nbsp; These projects are best-in-breed, meaning they are the top quality projects that are at times included as part of other commercial containers. &nbsp;Why Apache Karaf? &nbsp;Because it's a full service modular container (more on that later) with an OSGi runtime as a kernel subsystem. &nbsp;Its kind of like running your own Java based operating system, with a full SSH console to boot! &nbsp;The components are the API's that let you build your services and routes which you can expose to the outside world. &nbsp;What are these awesome Apache projects?</p>"
         },
         {
           "_name": "features3",
@@ -237,26 +252,26 @@
           },
           "_anchor": "features3-0",
           "_params": {
-            "paddingTop": "1",
-            "paddingBottom": 2,
-            "bgImageRadio": false,
-            "parallax": true,
-            "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
-            "bgColor": "#fff",
-            "bgColorRadio": true,
-            "bgVideo": {
-              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
-            },
-            "bgVideoRadio": false,
-            "overlay": false,
-            "overlayOpacity": 0.5,
-            "overlayColor": "#222",
-            "columns": 4,
             "showImages": true,
             "showTitles": true,
             "showSubtitles": true,
             "ShowTexts": true,
-            "showButtons": false
+            "showButtons": false,
+            "paddingTop": "1",
+            "paddingBottom": 2,
+            "columns": 4,
+            "bgImageRadio": false,
+            "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
           },
           "media1": {
             "image": {
@@ -361,23 +376,23 @@
           "_name": "msg-box8",
           "_anchor": "msg-box8-0",
           "_params": {
+            "showTitle": true,
+            "showText": true,
+            "showButton": false,
             "paddingTop": "1",
             "paddingBottom": "0",
-            "parallax": true,
             "bgImageRadio": true,
             "bgImage": "@PROJECT_PATH@/assets/images/blocks-2000x1333-35.jpg",
-            "bgColor": "#F2F2F2",
+            "parallax": true,
             "bgColorRadio": false,
+            "bgColor": "#F2F2F2",
+            "bgVideoRadio": false,
             "bgVideo": {
               "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
             },
-            "bgVideoRadio": false,
             "overlay": true,
-            "overlayOpacity": "0.7",
             "overlayColor": "#222",
-            "showTitle": true,
-            "showText": true,
-            "showButton": false
+            "overlayOpacity": "0.7"
           },
           "title": "<span style=\"font-weight: normal;\">MODULARITY</span>",
           "text": "<p>The ultimate goal of a true microservices container</p>",
@@ -403,7 +418,7 @@
             "bgColor": "#fff"
           },
           "text1": "<blockquote>\"Do you really need that fat stack? Most deployments use 5-10% of a Java EE stack, so why eat those resources?\"</blockquote>",
-          "text2": "<p>What makes Aetos different than all the rest? &nbsp;Modularity. &nbsp;Modularity is key to any Microservice container so you can deploy only those services and technologies that are right for your applications. &nbsp;Modularity is cloud friendly, so you can deploy and undeploy your services without an impact on the conatiner. &nbsp;Java is notorious for its tree-based Classloader and today's Java EE containers are typically monolithic, where by you <i>Get It All</i>™. &nbsp;Cloud images can be challenging to run full-stack containers due to memory requirements. &nbsp;Do you really need that fat stack? &nbsp;Most deployments use 5-10% of a Java EE stack, so why eat those resources?</p><p><br></p><p>Aetos is OSGi-based which means it has a matrix-based classloader. &nbsp;You can load and unload your services at will, or even hot-upgrade them without having to restart your container!</p><p><br></p><p>Do you want a full profile that a Java EE stack has to offer? &nbsp;Throw together a feature for the &nbsp;profile that you require, and you will have the same things that a Java EE container will offers. &nbsp;JTA, JAX-RS, JAX-WS, you name it. &nbsp;Need security? &nbsp;JAAS is baked right in. &nbsp;Don't need the full profile? &nbsp;\"Feature\" up what only you need and keep that container as light as you want.</p><p><br></p><p>What about microprofile? &nbsp;Its all ready there! &nbsp;Pull in the bundles for microprofile and you are microprofile ready.</p><p><br></p><p>Shhhh... we don't like profiles any ways. &nbsp;We think that you should put in your container what you want and need, not what some group of people think that you should have. :-)</p>"
+          "text2": "<p>What makes Aetos different than all the rest? &nbsp;Modularity. &nbsp;Modularity is key to any Microservice container so you can deploy only those services and technologies that are right for your applications. &nbsp;Modularity is cloud friendly, so you can deploy and undeploy your services without an impact on the conatiner. &nbsp;Java is notorious for its tree-based classloader and today's Java EE containers are typically monolithic, where by you <i>Get It All</i>™. &nbsp;Cloud images can be challenging to run full-stack containers due to memory requirements. &nbsp;Do you really need that fat stack? &nbsp;Most deployments use 5-10% of a Java EE stack, so why eat those resources?</p><p><br></p><p>Aetos is OSGi-based which means it has a matrix-based classloader. &nbsp;You can load and unload your services at will, or even hot-upgrade them without having to restart your container!</p><p><br></p><p>Do you want a full profile that a Java EE stack has? &nbsp;Throw together a feature for the &nbsp;profile that you require, and you will have the same things that a Java EE container will offer. &nbsp;JTA, JAX-RS, JAX-WS, you name it. &nbsp;Need security? &nbsp;JAAS is baked right in. &nbsp;Don't need the full profile? &nbsp;\"Feature\" up what only you need and keep that container as light as you want.</p><p><br></p><p>What about microprofile? &nbsp;Its all ready there! &nbsp;Pull in the bundles for microprofile and you are microprofile ready.</p><p><br></p><p>Shhhh... we don't like profiles any ways. &nbsp;We think that you should put in your container what you want and need, not what some group of people think that you should have. :-)</p>"
         },
         {
           "_name": "msg-box5",
@@ -423,24 +438,25 @@
           },
           "_anchor": "msg-box5-0",
           "_params": {
+            "showTitle": true,
+            "showText": true,
+            "showButtons": false,
+            "inverse": false,
+            "imageSize": 50,
             "paddingTop": "1",
             "paddingBottom": 0,
-            "parallax": true,
             "bgImageRadio": false,
             "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
-            "bgColor": "#fff",
+            "parallax": true,
             "bgColorRadio": true,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
             "bgVideo": {
               "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
             },
-            "bgVideoRadio": false,
             "overlay": false,
-            "overlayOpacity": 0.5,
             "overlayColor": "#fff",
-            "inverse": false,
-            "showTitle": true,
-            "showText": true,
-            "showButtons": false
+            "overlayOpacity": 0.5
           },
           "media": {
             "image": {
@@ -465,7 +481,7 @@
             }
           },
           "title": "<span style=\"color: inherit; font-weight: normal; line-height: 1.1;\">Console Made with Apache Karaf</span><br>",
-          "text": "Apache Karaf is the cool lightweight container that makes this a great engine to manage your services. &nbsp;Apache Karaf is a OSGi-based runtime which provides a lightweight container onto which various components and applications can be deployed.<br><br>Apache Karaf uses either Apache Felix Framework or Eclipse Equinox OSGi frameworks, and provide additional features on top of the framework. &nbsp;Apache Karaf can be scaled from a very lightweight container to a fully features enterprise service: it's a very flexible and extensible container, covering all the major needs.<br><br>What makes this great is it can be managed through a terminal since it provides a really awesome console. &nbsp;Devops folks love it because they can manage and monitor Karaf with Puppet, Apache Chef, or just about any other orchestartion software for cloud based deployments.",
+          "text": "Apache Karaf is the cool lightweight container that makes this a great engine to manage your services. &nbsp;Apache Karaf is an OSGi-based runtime which provides a lightweight container onto which various components and applications can be deployed.<br><br>Apache Karaf uses either Apache Felix Framework or Eclipse Equinox OSGi frameworks, and provides additional features on top of the framework. &nbsp;Apache Karaf can be scaled from a very lightweight container to a fully featured enterprise service: it's a very flexible and extensible container, covering all the major needs.<br><br>What makes this great is it can be managed through a terminal since it offers a really awesome console. &nbsp;Devops folks love it because they can manage and monitor Karaf with Puppet, Apache Chef, or just about any other orchestration software for cloud based deployments.",
           "buttons": "<a data-app-btn=\"true\" class=\"btn btn-primary\" href=\"https://mobirise.com\" data-toolbar=\"-mbrBtnMove\">MORE</a>"
         },
         {
@@ -475,13 +491,13 @@
             "paddingTop": 2,
             "paddingBottom": 2,
             "bgImageRadio": false,
-            "parallax": true,
             "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
-            "bgColor": "#323232",
+            "parallax": true,
             "bgColorRadio": true,
+            "bgColor": "#323232",
             "overlay": true,
-            "overlayOpacity": 0.8,
-            "overlayColor": "#444444"
+            "overlayColor": "#444444",
+            "overlayOpacity": 0.8
           },
           "text": "Copyright (c) 2016 <a href=\"http://www.savoirtech.com\">Savoir Technologies. Inc</a> -&nbsp;Apache Karaf, Camel, ActiveMQ, CXF, Tomcat, Chef, and their logos are trademarked by Apache Software Foundation&nbsp;"
         },
@@ -504,25 +520,25 @@
           "_name": "content5",
           "_anchor": "content5-1",
           "_params": {
+            "showTitle": true,
+            "showCaption": true,
             "paddingTop": "1",
             "paddingBottom": "1",
             "bgImageRadio": true,
-            "parallax": true,
             "bgImage": "@PROJECT_PATH@/assets/images/bridge-2000x1397-70.jpg",
-            "bgColor": "#fff",
+            "parallax": true,
             "bgColorRadio": false,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
             "bgVideo": {
               "url": "https://www.youtube.com/watch?v=uNCr7NdOJgw"
             },
-            "bgVideoRadio": false,
             "overlay": true,
-            "overlayOpacity": "0.8",
             "overlayColor": "#000",
-            "showTitle": true,
-            "showCaption": true
+            "overlayOpacity": "0.7"
           },
           "title": "NEED SUPPORT?",
-          "caption": "We have that too! &nbsp;Get support from the folks at <a href=\"http://www.savoirtech.com\" style=\"font-style: normal;\" class=\"text-success\">Savoir Technologies</a> who have Apache commit on the major components of the Aetos microservice container. &nbsp;If we find a flaw in any component they can patch its and ensure the upstream fixes are made directly in the Apache products, so you are never working with forked code."
+          "caption": "We have that too! &nbsp;Get support from the folks at <a href=\"http://www.savoirtech.com\" style=\"font-style: normal;\" class=\"text-success\">Savoir Technologies</a> who have Apache commit on the major components of the Aetos microservice container. &nbsp;If we find a flaw in any component they can patch it and ensure the upstream fixes are made directly in the Apache products, so you are never working with forked code."
         },
         {
           "_inherit": "social-buttons2",
@@ -544,13 +560,13 @@
             "paddingTop": "0",
             "paddingBottom": "0",
             "bgImageRadio": false,
-            "parallax": true,
             "bgImage": "@THEME_PATH@/components/_images/landscape3.jpg",
-            "bgColor": "#2e2e2e",
+            "parallax": true,
             "bgColorRadio": true,
+            "bgColor": "#2e2e2e",
             "overlay": false,
-            "overlayOpacity": 0.5,
-            "overlayColor": "#222"
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
           },
           "text": "<span style=\"font-weight: normal;\">FOLLOW US</span>",
           "icons": "<a data-app-btn=\"true\" class=\"btn btn-social\" title=\"Twitter\" target=\"_blank\" href=\"https://twitter.com/savoirtech\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrFonts,-mbrFontSize,-mbrBtnColor\"><i class=\"socicon socicon-twitter\"></i></a> <a data-app-btn=\"true\" class=\"btn btn-social\" title=\"Facebook\" target=\"_blank\" href=\"https://github.com/savoirtech/aetos\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrFonts,-mbrFontSize,-mbrBtnColor\"><i class=\"socicon socicon-github\"></i></a>      <a data-app-btn=\"true\" class=\"btn btn-social\" title=\"LinkedIn\" target=\"_blank\" href=\"https://www.linkedin.com/company/savoir-technologies\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrFonts,-mbrFontSize,-mbrBtnColor\"><i class=\"socicon socicon-linkedin\"></i></a>   "
