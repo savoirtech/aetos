@@ -1882,6 +1882,14 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .hidden {
   visibility: hidden; }
 
+  /* Chrome fix as chrome is broken */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+.hidden {
+  visibility: visible; }
+}
+
+
 .visible {
   visibility: visible; }
 
