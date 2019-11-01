@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.savoirtech.aetos</groupId>
     <artifactId>aetos-parent</artifactId>
-    <version>4.2.0.0</version>
+    <version>4.2.0.1-SNAPSHOT</version>
     <name>Aetos Integration Platform :: Parent</name>
     <packaging>pom</packaging>
 
@@ -44,7 +44,7 @@
         <url>https://github.com/savoirtech/aetos</url>
         <connection>scm:git:git@github.com:savoirtech/aetos.git</connection>
         <developerConnection>scm:git:git@github.com:savoirtech/aetos.git</developerConnection>
-        <tag>aetos-parent-4.2.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <modules>
