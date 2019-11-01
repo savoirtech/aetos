@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.savoirtech.aetos</groupId>
         <artifactId>aetos-parent</artifactId>
-        <version>4.2.0.0-SNAPSHOT</version>
+        <version>4.2.0.0</version>
     </parent>
 
     <artifactId>features</artifactId>
