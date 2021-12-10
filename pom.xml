@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.savoirtech.aetos</groupId>
     <artifactId>aetos-parent</artifactId>
-    <version>4.2.0.1-SNAPSHOT</version>
+    <version>4.3.0.0-SNAPSHOT</version>
     <name>Aetos Integration Platform :: Parent</name>
     <packaging>pom</packaging>
 
@@ -20,10 +20,10 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <activemq.version>5.15.9</activemq.version>
-        <camel.version>2.24.2</camel.version>
-        <cxf.version>3.3.4</cxf.version>
-        <karaf.version>4.2.7</karaf.version>
+        <activemq.version>5.15.11</activemq.version>
+        <camel.version>3.6.0</camel.version>
+        <cxf.version>3.4.3</cxf.version>
+        <karaf.version>4.3.3</karaf.version>
 
         <!--
         CXF Settings
