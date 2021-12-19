@@ -23,7 +23,7 @@
         <activemq.version>5.15.9</activemq.version>
         <camel.version>2.24.2</camel.version>
         <cxf.version>3.3.4</cxf.version>
-        <karaf.version>4.2.13-SNAPSHOT</karaf.version>
+        <karaf.version>4.2.13</karaf.version>
 
         <!--
         CXF Settings
